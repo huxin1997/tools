@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:include="header :: tool_header (title=${tool.toolName},keywords=${tool.seoKeywords},description=${tool.seoDescription})"></head>
+<body>
+
+<div class="container">
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <h3 class="panel-title" th:text="${tool.toolName}">全民K歌</h3>
+        </div>
+        <div class="panel-body">
+            <!--<a type="button" class="btn btn-info" th:each="tool : ${category.tools}" th:text="${tool.toolName}" th:href="${tool.toolLink}"></a>-->
+            <div class="alert alert-success" role="alert" th:utext="${tool.seoDescription}">
+                <strong>通知</strong> 新版本功能完善中.. <a href="#" class="alert-link">添加QQ群</a>.
+            </div>
+
+            <div class="row">
+                <div class="col-md-6 col-md-offset-3"
+                     th:utext="${tool.toolCodeView}? ${tool.toolCodeView}: '<h1>功能完善中...</h1>'"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="container" th:include="footer :: copyright"></div>
+<script th:utext="${tool.toolCodeJs}"></script>
+</body>
+</html>

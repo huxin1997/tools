@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>在线工具 - 全名K哥</title>
+    <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!-- 可选的 Bootstrap 主题文件（一般不用引入） -->
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
+    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+
+</head>
+<body>
+
+<div class="container">
+    <div class="panel panel-primary" >
+        <div class="panel-heading">
+            <h3 class="panel-title" >全民K歌</h3>
+        </div>
+        <div class="panel-body">
+            <!--<a type="button" class="btn btn-info" th:each="tool : ${category.tools}" th:text="${tool.toolName}" th:href="${tool.toolLink}"></a>-->
+            <div class="alert alert-success" role="alert">
+                <strong>通知</strong> 新版本功能完善中.. <a href="#" class="alert-link">添加QQ群</a>.
+            </div>
+
+            <div class="row">
+                <div class="col-md-6 col-md-offset-3">
+                    <input type="text" class="form-control " placeholder="这里粘贴快手视频链接..." aria-describedby="basic-addon1">
+                    <a type="button" class="btn btn-info btn-block" style="margin-top: 10px">解析</a>
+                    <a type="button" class="btn btn-default btn-block" style="margin-top: 10px">下载</a>
+                    <button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="left" title="Tooltip on left">Tooltip on left</button>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

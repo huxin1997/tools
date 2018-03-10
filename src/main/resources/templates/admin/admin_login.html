@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <th:block th:include="header :: index_header"></th:block>
+    <style>
+    </style>
+</head>
+<body>
+
+<div class="container" >
+    <div class="panel panel-default col-md-6 col-md-offset-3" style="margin-top: 10%;">
+        <!--<div class="panel-heading">后台管理</div>-->
+        <div class="panel-body">
+            <div class="">
+                <h2 class="h2 text-center text-info">后台管理中心</h2>
+                <div class="input-group input-group-lg">
+                    <span class="input-group-addon" id="sizing-addon1">@</span>
+                    <input type="text" class="form-control" placeholder="用户名" aria-describedby="sizing-addon1">
+                </div>
+                <BR>
+                <div class="input-group input-group-lg">
+                    <span class="input-group-addon" id="sizing-addon2">@</span>
+                    <input type="text" class="form-control" placeholder="密码" aria-describedby="sizing-addon2">
+                </div>
+                <br>
+
+                <div class="row">
+                    <div class="col-md-6"><button class="btn btn-lg btn-primary btn-block">登录</button></div>
+                    <div class="col-md-6"><button class="btn btn-lg btn-default btn-block">注册</button></div>
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+    </div>
+</div>
+
+
+<div class="container" th:include="footer :: copyright"></div>
+</body>
+</html>

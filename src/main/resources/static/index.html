@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <th:block th:include="header :: index_header"></th:block>
+    <style>
+        .item {
+            /*height: 110px;*/
+            padding: 8px;
+        }
+
+        .item .item-box {
+            display: block;
+            background-image: -webkit-linear-gradient(top, #FFF, #F9F9F9);
+            border-radius: 5px;
+            border: 1px solid #CCC;
+            height: 100%;
+            padding: 15px;
+            text-decoration: none;
+
+        }
+
+        .item .item-box:hover {
+            box-shadow: 7px 5px 8px 0px #0000001f;
+            border: 1px solid #cccccc3d;
+        }
+
+        .item-hd img {
+            display: block;
+            float: left;
+        }
+
+        .item-hd h4 {
+            display: block;
+            padding: 0;
+            margin: 0;
+            font-weight: bold;
+            font-family: 'Microsoft YaHei', '微软雅黑', '黑体';
+            color: #666;
+            margin-left: 60px;
+        }
+
+        .item-hd p {
+            overflow: hidden;
+            margin: 10px 10px 0px 60px;
+        }
+
+
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="panel panel-success" th:each="category,categoryStat: ${categorys}">
+        <div class="panel-heading">
+            <h3 class="panel-title" th:text=" ${categoryStat.index}+ ${category.name} "></h3>
+        </div>
+        <div class="panel-body">
+            <div class="item col-md-4" th:each="tool : ${category.tools}">
+                <a th:href="${tool.toolLink}" class="item-box">
+                    <div href="#" class="item-hd">
+                        <img src="http://www.godeye.org/img/course/r.png" alt="">
+                        <h4 class="h4" th:text="${tool.toolName}">快手视频下载</h4>
+                        <p>Linux是绝对部分互联网项目用到的</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="panel panel-default">
+        <div class="panel-heading">工具制作</div>
+        <div class="panel-body">
+            <div class=" col-md-6">
+            <textarea class="form-control " placeholder="Textarea" rows="10">
+            </textarea>
+            </div>
+            <div class="col-md-6">
+                        <textarea class="form-control " placeholder="Textarea" rows="10">
+            </textarea>
+                <div> <button class="btn btn-default" >提交代码</button></div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+<div class="container" th:include="footer :: copyright"></div>
+</body>
+</html>

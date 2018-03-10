@@ -1,0 +1,22 @@
+mybatis:
+  configuration:
+    map-underscore-to-camel-case: true
+  type-aliases-package: com.huxin.tools.entity,com.huxin.tools.vo
+  mapper-locations: classpath:mybatis/*Mapper.xml
+#  config-location: classpath:mybatis-config.xml
+#  check-config-location: true
+
+spring:
+  thymeleaf:
+    cache: false
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql:///online_tools?useUnicode=true&characterEncoding=UTF-8
+    username: root
+    password: root
+logging:
+  level:
+        com.huxin.tools.dao: debug
+
