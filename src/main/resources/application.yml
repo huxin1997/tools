@@ -13,10 +13,18 @@ spring:
 spring:
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql:///online_tools?useUnicode=true&characterEncoding=UTF-8
-    username: root
-    password: root
+    url: jdbc:mysql://118.89.22.131/tools?useUnicode=true&characterEncoding=UTF-8
+    username: tools
+    password: tools
+
 logging:
   level:
         com.huxin.tools.dao: debug
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
 

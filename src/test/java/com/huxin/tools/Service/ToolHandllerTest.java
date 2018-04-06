@@ -22,6 +22,8 @@ public class ToolHandllerTest {
         Document doc = Jsoup.connect("https://www.kuaishou.com/photo/693811942/5224828216?userId=693811942&photoId=5224828216&timestamp=1519558207673&cc=share_copylink&et=1_i%2F1593372196504616962_h88&fid=225111831").get();
         Elements select = doc.select("head > meta:nth-child(22)");
         logger.info(select.attr("content"));
+
     }
 
 }
+

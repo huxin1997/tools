@@ -48,7 +48,40 @@
     </style>
 </head>
 <body>
+
+<div style="height: 30px;background:#eee;line-height: 30px; border-bottom: 1px solid #0000001f;margin-bottom: 20px;">
+    <a href="#"></a>
+</div>
+
 <div class="container">
+
+    <!-- Nav tabs -->
+    <ul class="nav nav-tabs" role="tablist">
+        <li role="presentation" th:class="${cStart.first?'active':''}"  th:each="category,cStart: ${categorys}"><a  th:href="'#c' + ${cStart.index}" th:aria-controls="'c' + ${cStart.index}"  role="tab" data-toggle="tab" th:text="${category.name}">所有</a></li>
+<!--        <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">开发类</a></li>
+        <li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">其他类</a></li>-->
+    </ul>
+
+    <!-- Tab panes -->
+    <div class="tab-content">
+        <div role="tabpanel" th:class="${cStart.first?'tab-pane active':'tab-pane fade'}"  th:id="'c' + ${cStart.index}" th:each="category,cStart: ${categorys}" >
+            <div class="item col-md-4" th:each="tool : ${category.tools}">
+                <a th:href="${tool.toolLink}" class="item-box">
+                    <div href="#" class="item-hd">
+                        <img src="http://www.godeye.org/img/course/r.png" alt="">
+                        <h4 class="h4" th:text="${tool.toolName}">快手视频下载</h4>
+                        <p>Linux是绝对部分互联网项目用到的</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+<!--        <div role="tabpanel" class="tab-pane fade" id="profile">2</div>
+        <div role="tabpanel" class="tab-pane fade" id="messages">3</div>
+        <div role="tabpanel" class="tab-pane fade" id="settings">4</div>-->
+    </div>
+
+</div>
+<!--<div class="container">
     <div class="panel panel-success" th:each="category,categoryStat: ${categorys}">
         <div class="panel-heading">
             <h3 class="panel-title" th:text=" ${categoryStat.index}+ ${category.name} "></h3>
@@ -65,9 +98,11 @@
             </div>
         </div>
     </div>
-</div>
+</div>-->
+
 
 <div class="container">
+
     <div class="panel panel-default">
         <div class="panel-heading">工具制作</div>
         <div class="panel-body">
@@ -78,7 +113,9 @@
             <div class="col-md-6">
                         <textarea class="form-control " placeholder="Textarea" rows="10">
             </textarea>
-                <div> <button class="btn btn-default" >提交代码</button></div>
+                <div>
+                    <button class="btn btn-default">提交代码</button>
+                </div>
             </div>
 
         </div>
